@@ -1,0 +1,856 @@
+/* Reset y variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #fff1cc;
+    --dark-blue: #0F2C4B;
+    --orange: #FF6B35;
+    --yellow: #FFD700;
+    --light-yellow: #FFF9C4;
+    --light-blue: #E3F2FD;
+    --white: #FFFFFF;
+    --text-dark: #0F2C4B;
+    --text-light: #6B7280;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--cream);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav {
+    padding: 1.5rem 0;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--orange);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--cream);
+    padding: 4rem 0 6rem;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 300px;
+}
+
+.hero-illustration {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.illustration-circle {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: var(--light-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.illustration-person {
+    position: relative;
+    width: 200px;
+    height: 250px;
+}
+
+.person-body {
+    width: 120px;
+    height: 150px;
+    background-color: var(--orange);
+    border-radius: 60px 60px 20px 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px;
+}
+
+.person-laptop {
+    width: 140px;
+    height: 90px;
+    background-color: var(--dark-blue);
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #1a3d5f;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--cream);
+    color: var(--text-dark);
+    border: 2px solid var(--text-dark);
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-dark);
+    color: var(--white);
+}
+
+/* Qué es Infodivent Section */
+.que-es {
+    background-color: var(--cream);
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+.section-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    text-align: center;
+    line-height: 1.8;
+}
+
+.section-title-left {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* Nuestra misión Section */
+.mision {
+    background-color: var(--cream);
+    padding: 5rem 0;
+}
+
+.mision-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.mision-paragraph {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.mision-illustration {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.illustration-circle-yellow {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: var(--light-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.stars {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.star {
+    display: inline-block;
+    color: var(--yellow);
+    font-size: 1.5rem;
+    margin: 0 5px;
+}
+
+.lightbulbs {
+    position: absolute;
+    top: 60px;
+    left: 50px;
+}
+
+.lightbulb {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.moon {
+    position: absolute;
+    top: 100px;
+    right: 80px;
+    font-size: 3rem;
+}
+
+.illustration-person-mision {
+    position: relative;
+    width: 200px;
+    height: 250px;
+}
+
+.person-body-mision {
+    width: 120px;
+    height: 150px;
+    background-color: var(--orange);
+    border-radius: 60px 60px 20px 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px;
+}
+
+.person-book {
+    width: 80px;
+    height: 100px;
+    background-color: #DC143C;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Para quién es Infodivent Section */
+.para-quien {
+    background-color: var(--dark-blue);
+    padding: 5rem 0;
+}
+
+.section-title-white {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--white);
+    margin-bottom: 3rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.target-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-illustration {
+    margin-bottom: 1.5rem;
+}
+
+.illustration-bg-yellow {
+    width: 100%;
+    height: 200px;
+    background-color: var(--light-yellow);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.illustration-person-card {
+    position: relative;
+    width: 150px;
+    height: 180px;
+}
+
+.person-body-card {
+    width: 80px;
+    height: 100px;
+    background-color: var(--orange);
+    border-radius: 40px 40px 15px 15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
+}
+
+.person-body-card.suit {
+    background-color: var(--dark-blue);
+}
+
+.person-laptop-card {
+    width: 100px;
+    height: 60px;
+    background-color: var(--dark-blue);
+    border-radius: 6px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 120px;
+}
+
+.person-tablet {
+    width: 80px;
+    height: 100px;
+    background-color: var(--white);
+    border-radius: 6px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+    border: 2px solid var(--dark-blue);
+}
+
+.graduation-cap {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+}
+
+.checkmark {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.lightbulb-icon {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.card-description {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Lo que ofrecemos Section */
+.ofrecemos {
+    background-color: var(--dark-blue);
+    padding: 5rem 0;
+}
+
+.ofrecemos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.ofrecemos-card {
+    background-color: var(--cream);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.ofrecemos-illustration {
+    margin-bottom: 1.5rem;
+}
+
+.illustration-bg-blue {
+    width: 100%;
+    height: 200px;
+    background-color: var(--light-blue);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.person-flag {
+    font-size: 4rem;
+}
+
+.person-tablet-large {
+    font-size: 4rem;
+}
+
+.book-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+}
+
+.person-bowl {
+    font-size: 3rem;
+}
+
+.food-items {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+}
+
+.ofrecemos-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.ofrecemos-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ofrecemos-list li {
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.ofrecemos-list li::before {
+    content: "•";
+    color: var(--orange);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+}
+
+.ofrecemos-description {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Testimonios Section */
+.testimonios {
+    background-color: var(--cream);
+    padding: 5rem 0;
+}
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.testimonio-card {
+    text-align: center;
+}
+
+.testimonio-avatar {
+    margin-bottom: 1rem;
+}
+
+.avatar-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--light-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.avatar-person {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--orange);
+}
+
+.avatar-person.glasses {
+    background-color: var(--orange);
+    position: relative;
+}
+
+.avatar-person.glasses::after {
+    content: "👓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+}
+
+.avatar-person.teal {
+    background-color: #20B2AA;
+}
+
+.testimonio-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.testimonio-quote {
+    color: var(--text-dark);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.testimonio-role {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.testimonios-pagination {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.pagination-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    margin: 0 5px;
+}
+
+.pagination-dot.active {
+    background-color: var(--yellow);
+}
+
+/* Únete Section */
+.unete {
+    background-color: var(--cream);
+    padding: 5rem 0;
+}
+
+.unete-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.unete-description {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.unete-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.unete-icon {
+    font-size: 1.5rem;
+}
+
+.unete-icon-label {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.unete-illustration {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.illustration-person-unete {
+    position: relative;
+    width: 200px;
+    height: 250px;
+}
+
+.person-body-unete {
+    width: 120px;
+    height: 150px;
+    background-color: var(--orange);
+    border-radius: 60px 60px 20px 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px;
+}
+
+.envelope {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+}
+
+.lightbulb-envelope {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+}
+
+.share-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.share-btn:hover {
+    background-color: #1a3d5f;
+}
+
+/* Últimos recursos Section */
+.ultimos-recursos {
+    background-color: var(--dark-blue);
+    padding: 5rem 0;
+}
+
+.recursos-subtitle {
+    text-align: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .hero-content,
+    .mision-content,
+    .unete-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-illustration,
+    .mision-illustration,
+    .unete-illustration {
+        order: -1;
+    }
+
+    .cards-grid,
+    .ofrecemos-grid,
+    .testimonios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: none;
+        gap: 1rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .section-title,
+    .section-title-left,
+    .section-title-white {
+        font-size: 2rem;
+    }
+
+    .illustration-circle,
+    .illustration-circle-yellow {
+        width: 300px;
+        height: 300px;
+    }
+}
