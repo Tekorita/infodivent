@@ -22,12 +22,51 @@
     text-align: center;
 }
 
+.hero-main-headline {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
 .hero-small-text {
     font-size: 0.9rem;
     text-transform: uppercase;
     color: var(--text-gray);
     margin-bottom: 1rem;
     letter-spacing: 1px;
+}
+
+.hero-description-box {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-question {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.hero-answer {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.hero-result {
+    font-size: 1rem;
+    color: var(--green-primary);
+    font-weight: 600;
+    margin: 0;
 }
 
 .keto-main-title {
@@ -84,12 +123,98 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.ebook-cover-hero {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ebook-cover-hero-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: floatImage 2s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
 .ebook-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--green-primary);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.ebook-categories {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.ebook-categories li {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    padding-left: 0;
+    font-weight: 500;
+}
+
+.features-card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.antes-despues-mini {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.antes-mini,
+.despues-mini {
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.antes-mini {
+    background-color: #FFEBEE;
+    border-left: 4px solid #E53935;
+}
+
+.despues-mini {
+    background-color: #E8F5E9;
+    border-left: 4px solid var(--green-primary);
+}
+
+.antes-label-mini,
+.despues-label-mini {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.antes-mini p,
+.despues-mini p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-dark);
 }
 
 .ebook-subtitle {
@@ -114,15 +239,19 @@
 
 .food-placeholder {
     font-size: 3rem;
-    animation: float 3s ease-in-out infinite;
+    animation: float 2s ease-in-out infinite;
 }
 
 .food-placeholder:nth-child(2) {
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
 }
 
 .food-placeholder:nth-child(3) {
-    animation-delay: 1s;
+    animation-delay: 0.6s;
+}
+
+.food-placeholder:nth-child(4) {
+    animation-delay: 0.9s;
 }
 
 @keyframes float {
@@ -209,6 +338,14 @@
     margin: 3rem 0;
 }
 
+.main-cta-section-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .btn-green {
     background-color: var(--green-primary);
     color: var(--white);
@@ -219,13 +356,70 @@
     font-size: 1.1rem;
     text-transform: uppercase;
     display: inline-block;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     border: none;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    animation: buttonPulseConstant 1.5s ease-in-out infinite;
 }
 
 .btn-green:hover {
     background-color: var(--green-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: buttonPulseConstantHover 1.2s ease-in-out infinite;
+}
+
+@keyframes buttonPulseConstantHover {
+    0%, 100% {
+        transform: translateY(-2px) scale(1);
+    }
+    50% {
+        transform: translateY(-2px) scale(1.05);
+    }
+}
+
+.btn-green:active {
+    animation: buttonPulseClick 0.6s ease;
+}
+
+@keyframes buttonPulseConstant {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes buttonPulseClick {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-green::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-green:active::before {
+    width: 300px;
+    height: 300px;
 }
 
 .btn-large {
@@ -414,6 +608,51 @@
     padding: 4rem 0;
 }
 
+.testimonios-title-main {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.testimonios-grid-new {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonio-card-new {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonio-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonio-text {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.testimonio-author {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    font-weight: bold;
+    margin: 0;
+}
+
 .testimonios-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -534,6 +773,15 @@
     align-items: center;
 }
 
+.cocinando-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .chef-placeholder {
     font-size: 8rem;
     animation: wave 2s ease-in-out infinite;
@@ -632,6 +880,18 @@
     text-transform: none;
 }
 
+.bono-value {
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.bono-price-today {
+    color: var(--green-primary);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
 .pricing-breakdown {
     max-width: 800px;
     margin: 3rem auto;
@@ -650,12 +910,28 @@
     font-weight: bold;
 }
 
+.breakdown-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.breakdown-total strong {
+    color: var(--orange);
+    font-size: 1.8rem;
+}
+
 .final-price {
     font-size: 2rem;
     font-weight: bold;
     color: var(--text-dark);
     text-transform: uppercase;
     margin-top: 1rem;
+}
+
+.final-price strong {
+    color: var(--green-primary);
 }
 
 .why-section {
@@ -755,9 +1031,9 @@
 
 .features-boxes {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    max-width: 800px;
+    max-width: 900px;
     margin: 3rem auto;
 }
 
@@ -785,6 +1061,32 @@
     font-size: 0.9rem;
     color: var(--text-gray);
     margin: 0;
+}
+
+.guarantee-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    align-items: center;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.guarantee-badge-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guarantee-badge-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
 }
 
 .guarantee-badge-large {
@@ -828,6 +1130,41 @@
     background-color: var(--cream);
     padding: 3rem 0;
     text-align: center;
+}
+
+.cta-final-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-final-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.cta-final-text {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.cta-final-subtext {
+    font-size: 1rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-price-note {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-top: 1rem;
+    font-weight: 500;
 }
 
 /* Footer */
@@ -909,12 +1246,41 @@
     margin-bottom: 1rem;
 }
 
+/* Animaciones de scroll */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-animate-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.scroll-animate-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.scroll-animate-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.scroll-animate-delay-4 {
+    transition-delay: 0.4s;
+}
+
 /* Responsive */
 @media (max-width: 968px) {
     .ebook-showcase,
     .testimonios-content,
     .includes-content,
-    .antes-despues {
+    .antes-despues,
+    .testimonios-grid-new {
         grid-template-columns: 1fr;
     }
 
@@ -926,6 +1292,21 @@
         font-size: 4.5rem;
     }
 
+    .features-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-main-headline {
+        font-size: 1.2rem;
+    }
+
+    .guarantee-badges-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
     .features-boxes {
         grid-template-columns: 1fr;
     }

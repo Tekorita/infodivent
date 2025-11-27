@@ -42,47 +42,116 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Animación de entrada para las tarjetas
+    // Configuración del Intersection Observer para animaciones de scroll
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -100px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    // Función para observar elementos y agregar animación
+    const scrollObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('animated');
+                // No necesitamos observar más este elemento después de animarlo
+                scrollObserver.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Aplicar animaciones a las tarjetas
-    const cards = document.querySelectorAll('.target-card, .ofrecemos-card, .testimonio-card');
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+    // Seleccionar todos los elementos principales del landing page para animar
+    // Primero verificar si estamos en la página de keto o en index
+    const isKetoPage = document.querySelector('.keto-hero');
+    
+    let elementsToAnimate = [];
+    
+    if (isKetoPage) {
+        // Elementos para la página de keto
+        elementsToAnimate = [
+            '.hero-main-headline',
+            '.keto-main-title',
+            '.hero-subtitle-main',
+            '.hero-subtitle-secondary',
+            '.hero-description-box',
+            '.ebook-cover-card',
+            '.ebook-features-card',
+            '.pricing-section',
+            '.main-cta-section',
+            '.includes-title',
+            '.include-item',
+            '.includes-image-placeholder',
+            '.bonos-title',
+            '.bono-item',
+            '.pricing-breakdown',
+            '.testimonios-title-main',
+            '.testimonio-card-new',
+            '.faq-title',
+            '.faq-item',
+            '.features-boxes',
+            '.guarantee-badge-large',
+            '.cta-final-content'
+        ];
+    } else {
+        // Elementos para la página principal (index)
+        elementsToAnimate = [
+            '.hero-title',
+            '.hero-subtitle',
+            '.hero-description',
+            '.hero-buttons',
+            '.hero-illustration',
+            '.section-title',
+            '.section-text',
+            '.section-title-left',
+            '.mision-paragraph',
+            '.mision-illustration',
+            '.section-title-white',
+            '.target-card',
+            '.ofrecemos-card',
+            '.testimonio-card',
+            '.unete-content',
+            '.recursos-subtitle',
+            '.recursos-cta'
+        ];
+    }
+
+    // Aplicar clases de animación y observar cada elemento
+    elementsToAnimate.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach((element, index) => {
+            // Agregar clase base de animación
+            element.classList.add('scroll-animate');
+            
+            // Agregar delay basado en el índice para efecto escalonado
+            if (index > 0) {
+                const delayClass = `scroll-animate-delay-${(index % 4) + 1}`;
+                element.classList.add(delayClass);
+            }
+            
+            // Observar el elemento
+            scrollObserver.observe(element);
+        });
     });
 
-    // Animación para las ilustraciones
-    const illustrations = document.querySelectorAll('.illustration-circle, .illustration-circle-yellow');
-    illustrations.forEach(illustration => {
-        illustration.style.opacity = '0';
-        illustration.style.transform = 'scale(0.9)';
-        illustration.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        
-        const illustrationObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'scale(1)';
-                }
-            });
-        }, observerOptions);
-        
-        illustrationObserver.observe(illustration);
+    // Animación especial para elementos en grid
+    let gridElements;
+    if (isKetoPage) {
+        gridElements = document.querySelectorAll(
+            '.testimonio-card-new, .bono-item, .include-item, .faq-item, .feature-box'
+        );
+    } else {
+        gridElements = document.querySelectorAll(
+            '.target-card, .ofrecemos-card, .testimonio-card'
+        );
+    }
+    
+    gridElements.forEach((element, index) => {
+        // Solo agregar si no tiene ya la clase scroll-animate
+        if (!element.classList.contains('scroll-animate')) {
+            element.classList.add('scroll-animate');
+            const delayClass = `scroll-animate-delay-${(index % 4) + 1}`;
+            element.classList.add(delayClass);
+            scrollObserver.observe(element);
+        }
     });
 
     // Botón compartir
