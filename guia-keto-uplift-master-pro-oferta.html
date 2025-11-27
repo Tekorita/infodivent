@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Guía Keto Master Pro - El sistema definitivo para organizar tu alimentación y acelerar tus resultados">
-    <title>Guía Keto Master Pro</title>
+    <meta name="description" content="Guía Keto Master Pro - Oferta Especial - El sistema definitivo para organizar tu alimentación y acelerar tus resultados">
+    <title>Guía Keto Master Pro - Oferta Especial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -58,6 +58,9 @@
     <!-- Hero Section -->
     <section class="keto-hero">
         <div class="container">
+            <div class="offer-alert">
+                ⚠️ ÚLTIMA OFERTA DISPONIBLE - NO TE LA PIERDAS ⚠️
+            </div>
             <p class="hero-main-headline">¡DOMINA TU TRANSFORMACIÓN KETO CON EL MÉTODO MÁS COMPLETO!</p>
             <h1 class="keto-main-title">
                 <span class="keto-title-line1">GUÍA</span>
@@ -82,11 +85,18 @@
                 <p class="hero-result">Un sistema práctico + herramientas imprimibles + mini recetas + organización semanal paso a paso.</p>
             </div>
 
+            <div class="countdown-container">
+                <div class="countdown-label">Oferta caduca en:</div>
+                <div class="countdown-timer" id="countdown">01:12</div>
+            </div>
+
+            <p class="offer-alert-text">🔥 ÚLTIMA OFERTA DISPONIBLE - PRECIO ESPECIAL 🔥</p>
+
             <div class="pricing-section">
                 <p class="offer-text">Oferta exclusiva por tiempo limitado</p>
                 <p class="price-text">
                     <span class="price-strikethrough">$35 USD</span>
-                    <span class="price-current">HOY SOLO: $14 USD</span>
+                    <span class="price-current price-current-oferta">HOY SOLO: $7 USD</span>
                 </p>
                 <p class="guarantee-text">Acceso inmediato · Pago seguro · Garantía de 7 días</p>
             </div>
@@ -356,11 +366,12 @@
     <section id="comprar" class="cta-final-section">
         <div class="container">
             <div class="cta-final-content">
+                <p class="offer-alert-text">🔥 ÚLTIMA OFERTA DISPONIBLE - NO TE LA PIERDAS 🔥</p>
                 <h2 class="cta-final-title">⚡ GARANTÍA TOTAL DE 7 DÍAS</h2>
                 <p class="cta-final-text">Si en una semana no notas mejoría en tu energía, claridad o consistencia, te devolvemos tu inversión.</p>
                 <p class="cta-final-subtext">COMPRA 100% SEGURA · ENTREGA INMEDIATA · ACCESO DE POR VIDA</p>
                 <a href="#" class="btn btn-green btn-large">¡QUIERO EMPEZAR MI TRANSFORMACIÓN!</a>
-                <p class="cta-price-note">Precio final: $14 USD</p>
+                <p class="cta-price-note price-current-oferta">Precio final: $7 USD</p>
             </div>
         </div>
     </section>
@@ -373,6 +384,37 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Contador regresivo de 4.2 minutos (252 segundos = 1.2 + 3 minutos)
+        let timeLeft = 252; // 4.2 minutos = 252 segundos
+        
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            if (countdownElement) {
+                countdownElement.textContent = formatTime(timeLeft);
+                
+                if (timeLeft > 0) {
+                    timeLeft--;
+                } else {
+                    countdownElement.textContent = '00:00';
+                    countdownElement.style.color = '#ff0000';
+                    clearInterval(countdownInterval);
+                }
+            }
+        }
+        
+        // Actualizar cada segundo
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        
+        // Inicializar inmediatamente
+        updateCountdown();
+    </script>
 </body>
 </html>
 
