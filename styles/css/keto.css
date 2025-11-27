@@ -1047,9 +1047,9 @@
 
 .features-boxes {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 3rem auto;
 }
 
@@ -1092,6 +1092,14 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.guarantee-badge-single {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
 .guarantee-badge-item {
     display: flex;
     justify-content: center;
@@ -1100,7 +1108,7 @@
 
 .guarantee-badge-image {
     width: 100%;
-    max-width: 250px;
+    max-width: 500px;
     height: auto;
     object-fit: contain;
 }
@@ -1290,6 +1298,102 @@
     transition-delay: 0.4s;
 }
 
+/* Sección: Lo que vas a lograr Master Pro */
+.logros-section-master {
+    background-color: var(--green-dark);
+    padding: 4rem 0;
+}
+
+.logros-title-master {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--green-light);
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.antes-despues-master {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.antes-section-master,
+.despues-section-master {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.logros-image-master {
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logros-photo-master {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.section-label-master {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.antes-label-master {
+    color: #E53935;
+}
+
+.despues-label-master {
+    color: var(--green-primary);
+}
+
+.logros-list-master {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logros-list-master li {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    padding-left: 0;
+}
+
+.includes-subtitle {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.includes-note {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+.hero-box-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
 /* Responsive */
 @media (max-width: 968px) {
     .ebook-showcase,
@@ -1319,6 +1423,29 @@
     .guarantee-badges-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .guarantee-badge-single {
+        max-width: 100%;
+        margin: 1.5rem auto;
+    }
+
+    .guarantee-badge-image {
+        max-width: 100%;
+    }
+
+    .antes-despues-master {
+        grid-template-columns: 1fr;
+    }
+
+    .features-boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .features-boxes {
+        grid-template-columns: 1fr;
     }
 }
 

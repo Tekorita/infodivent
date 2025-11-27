@@ -29,6 +29,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Ebooks dropdown toggle
+    const ebooksDropdown = document.querySelector('.ebooks-dropdown');
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    
+    if (ebooksDropdown && dropdownToggle) {
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            ebooksDropdown.classList.toggle('active');
+        });
+
+        // Cerrar dropdown al hacer click fuera
+        document.addEventListener('click', function(e) {
+            if (ebooksDropdown && !ebooksDropdown.contains(e.target)) {
+                ebooksDropdown.classList.remove('active');
+            }
+        });
+    }
+
     // Efecto de scroll en el header
     const header = document.querySelector('.header');
     
@@ -60,12 +79,40 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Seleccionar todos los elementos principales del landing page para animar
-    // Primero verificar si estamos en la página de keto o en index
+    // Primero verificar si estamos en la página de keto, master pro o en index
     const isKetoPage = document.querySelector('.keto-hero');
+    const isMasterProPage = document.querySelector('.logros-section-master');
     
     let elementsToAnimate = [];
     
-    if (isKetoPage) {
+    if (isMasterProPage) {
+        // Elementos para la página de Master Pro
+        elementsToAnimate = [
+            '.hero-main-headline',
+            '.keto-main-title',
+            '.hero-subtitle-main',
+            '.hero-subtitle-secondary',
+            '.ebook-cover-hero',
+            '.hero-description-box',
+            '.pricing-section',
+            '.main-cta-section',
+            '.includes-title',
+            '.includes-subtitle',
+            '.include-item',
+            '.includes-image-placeholder',
+            '.logros-title-master',
+            '.antes-despues-master',
+            '.bonos-title',
+            '.bono-item',
+            '.testimonios-title-main',
+            '.testimonio-card-new',
+            '.faq-title',
+            '.faq-item',
+            '.features-boxes',
+            '.guarantee-badges-grid',
+            '.cta-final-content'
+        ];
+    } else if (isKetoPage) {
         // Elementos para la página de keto
         elementsToAnimate = [
             '.hero-main-headline',

@@ -87,6 +87,56 @@ body {
     color: var(--orange);
 }
 
+.nav-menu .ebooks-dropdown {
+    position: relative;
+}
+
+.nav-menu .dropdown-toggle {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-menu .dropdown-toggle:hover {
+    color: var(--orange);
+}
+
+.nav-menu .dropdown-arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-menu .ebooks-dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.nav-menu .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: auto;
+    min-width: 300px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 0.5rem;
+    z-index: 1000;
+    display: none;
+}
+
+.nav-menu .ebooks-dropdown.active .dropdown-menu {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -146,6 +196,99 @@ body {
     flex-direction: column;
     gap: 1rem;
     max-width: 300px;
+}
+
+/* Ebooks Dropdown */
+.ebooks-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.dropdown-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.ebooks-dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    margin-top: 0.5rem;
+    z-index: 1000;
+    overflow: hidden;
+    min-width: 300px;
+}
+
+.ebooks-dropdown.active .dropdown-menu {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: var(--bg-light);
+}
+
+.dropdown-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.dropdown-item-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.dropdown-item-description {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.4;
 }
 
 .hero-illustration {
@@ -875,6 +1018,23 @@ body {
 
     .mobile-menu-toggle {
         display: flex;
+    }
+
+    .nav-menu .dropdown-menu {
+        position: static;
+        min-width: 100%;
+        margin-top: 0.5rem;
+        box-shadow: none;
+        border: 1px solid #e5e7eb;
+    }
+
+    .nav-menu .ebooks-dropdown {
+        width: 100%;
+    }
+
+    .nav-menu .dropdown-toggle {
+        width: 100%;
+        justify-content: space-between;
     }
 }
 
