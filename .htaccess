@@ -1,0 +1,18 @@
+# Habilitar el motor de reescritura
+RewriteEngine On
+
+# Quitar la extensión .html de las URLs
+# Si la URL no termina en una extensión de archivo, agregar .html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Redirigir URLs con .html a URLs sin extensión
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# Forzar trailing slash (opcional, quita el # de la siguiente línea si lo quieres)
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^(.*[^/])$ /$1/ [L,R=301]
+
