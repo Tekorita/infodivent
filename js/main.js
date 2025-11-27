@@ -29,24 +29,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Ebooks dropdown toggle
-    const ebooksDropdown = document.querySelector('.ebooks-dropdown');
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    // Ebooks dropdown toggle - Funciona con múltiples dropdowns
+    const ebooksDropdowns = document.querySelectorAll('.ebooks-dropdown');
     
-    if (ebooksDropdown && dropdownToggle) {
-        dropdownToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            ebooksDropdown.classList.toggle('active');
-        });
+    ebooksDropdowns.forEach(function(ebooksDropdown) {
+        const dropdownToggle = ebooksDropdown.querySelector('.dropdown-toggle');
+        
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                ebooksDropdown.classList.toggle('active');
+            });
+        }
+    });
 
-        // Cerrar dropdown al hacer click fuera
-        document.addEventListener('click', function(e) {
-            if (ebooksDropdown && !ebooksDropdown.contains(e.target)) {
+    // Cerrar dropdown al hacer click fuera
+    document.addEventListener('click', function(e) {
+        ebooksDropdowns.forEach(function(ebooksDropdown) {
+            if (!ebooksDropdown.contains(e.target)) {
                 ebooksDropdown.classList.remove('active');
             }
         });
-    }
+    });
 
     // Efecto de scroll en el header
     const header = document.querySelector('.header');
