@@ -15,6 +15,10 @@
     {
       "source": "/guia-keto-uplift-master-pro-oferta",
       "destination": "/guia-keto-uplift-master-pro-oferta.html"
+    },
+    {
+      "source": "/gracias",
+      "destination": "/gracias.html"
     }
   ],
   "redirects": [
@@ -36,6 +40,11 @@
     {
       "source": "/guia-keto-uplift-master-pro-oferta.html",
       "destination": "/guia-keto-uplift-master-pro-oferta",
+      "permanent": true
+    },
+    {
+      "source": "/gracias.html",
+      "destination": "/gracias",
       "permanent": true
     }
   ]

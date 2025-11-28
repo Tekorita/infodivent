@@ -10,6 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/css/main.css">
     <link rel="stylesheet" href="styles/css/keto.css">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4253619061539789');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=4253619061539789&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <!-- Header -->
@@ -102,7 +120,7 @@
             </div>
 
             <div class="main-cta-section">
-                <a href="#comprar" class="btn btn-green btn-large">QUIERO LA GUÍA KETO MASTER PRO</a>
+                <a href="https://pay.hotmart.com/V103173417R?off=hpwn162l&checkoutMode=10&bid=1764306743386" target="_blank" class="btn btn-green btn-large">QUIERO LA GUÍA KETO MASTER PRO</a>
                 <div class="security-badge">
                     <div class="shield-icon">🛡️</div>
                     <div class="security-text">
@@ -370,11 +388,22 @@
                 <h2 class="cta-final-title">⚡ GARANTÍA TOTAL DE 7 DÍAS</h2>
                 <p class="cta-final-text">Si en una semana no notas mejoría en tu energía, claridad o consistencia, te devolvemos tu inversión.</p>
                 <p class="cta-final-subtext">COMPRA 100% SEGURA · ENTREGA INMEDIATA · ACCESO DE POR VIDA</p>
-                <a href="#" class="btn btn-green btn-large">¡QUIERO EMPEZAR MI TRANSFORMACIÓN!</a>
+                <a href="https://pay.hotmart.com/V103173417R?off=hpwn162l&checkoutMode=10&bid=1764306743386" target="_blank" class="btn btn-green btn-large">¡QUIERO EMPEZAR MI TRANSFORMACIÓN!</a>
                 <p class="cta-price-note price-current-oferta">Precio final: $7 USD</p>
             </div>
         </div>
     </section>
+
+    <!-- HOTMART - Sales Funnel Widget -->
+    <!--- sales funnel container --->
+    <div id="hotmart-sales-funnel"></div>
+
+    <!--- script load and setup --->
+    <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+    <script>
+        checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+    </script>
+    <!-- HOTMART - Sales Funnel Widget -->
 
     <!-- Footer -->
     <footer class="keto-footer">

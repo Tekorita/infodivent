@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gracias por tu compra - Keto Uplift">
+    <title>¡Gracias! - Keto Uplift</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/css/main.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .thanks-container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .thanks-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .thanks-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .thanks-content p {
+            margin-bottom: 1rem;
+        }
+
+        .welcome-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #667eea;
+            margin-top: 2rem;
+        }
+
+        /* Animaciones de emojis flotantes */
+        .emoji-float {
+            position: absolute;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .emoji-float:nth-child(1) { animation: float1 3s ease-in-out infinite; }
+        .emoji-float:nth-child(2) { animation: float2 3.5s ease-in-out infinite; }
+        .emoji-float:nth-child(3) { animation: float3 4s ease-in-out infinite; }
+        .emoji-float:nth-child(4) { animation: float4 3.2s ease-in-out infinite; }
+        .emoji-float:nth-child(5) { animation: float5 3.8s ease-in-out infinite; }
+        .emoji-float:nth-child(6) { animation: float6 3.3s ease-in-out infinite; }
+        .emoji-float:nth-child(7) { animation: float7 4.2s ease-in-out infinite; }
+        .emoji-float:nth-child(8) { animation: float8 3.6s ease-in-out infinite; }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(20px, -30px) rotate(180deg); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-25px, -35px) rotate(-180deg); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(30px, -25px) rotate(180deg); }
+        }
+
+        @keyframes float4 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, -40px) rotate(-180deg); }
+        }
+
+        @keyframes float5 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(25px, -30px) rotate(180deg); }
+        }
+
+        @keyframes float6 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, -25px) rotate(-180deg); }
+        }
+
+        @keyframes float7 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(20px, -35px) rotate(180deg); }
+        }
+
+        @keyframes float8 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-25px, -30px) rotate(-180deg); }
+        }
+
+        /* Fuegos artificiales con CSS */
+        .fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: explode 1s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(20);
+                opacity: 0;
+            }
+        }
+
+        /* Confetti animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            position: absolute;
+            animation: confetti-fall 3s linear infinite;
+        }
+
+        .confetti:nth-child(odd) {
+            background: #4ecdc4;
+            animation-duration: 2.5s;
+        }
+
+        .confetti:nth-child(3n) {
+            background: #ffe66d;
+            animation-duration: 3.5s;
+        }
+
+        .confetti:nth-child(4n) {
+            background: #95e1d3;
+            animation-duration: 2.8s;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .thanks-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .thanks-title {
+                font-size: 2rem;
+            }
+
+            .thanks-content {
+                font-size: 1rem;
+            }
+
+            .welcome-text {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Emojis flotantes -->
+    <div class="emoji-float" style="top: 10%; left: 10%;">🎉</div>
+    <div class="emoji-float" style="top: 20%; right: 15%;">✨</div>
+    <div class="emoji-float" style="top: 30%; left: 15%;">🌟</div>
+    <div class="emoji-float" style="top: 40%; right: 10%;">🎊</div>
+    <div class="emoji-float" style="top: 50%; left: 20%;">💫</div>
+    <div class="emoji-float" style="top: 60%; right: 20%;">⭐</div>
+    <div class="emoji-float" style="top: 70%; left: 10%;">🎈</div>
+    <div class="emoji-float" style="top: 80%; right: 15%;">🎁</div>
+
+    <!-- Contenedor principal -->
+    <div class="thanks-container">
+        <h1 class="thanks-title">💛 ¡Gracias por confiar en nosotros!</h1>
+        
+        <div class="thanks-content">
+            <p>Tu compra de Recetas y Guías Keto Uplift significa mucho para nosotros.</p>
+            <p>Gracias por darnos la oportunidad de acompañarte en este camino hacia una vida más ligera, saludable y llena de energía.</p>
+            <p>Deseamos de corazón que cada receta, cada consejo y cada herramienta te ayuden a lograr los resultados que tanto mereces.</p>
+            <p>Este es un nuevo comienzo, y nos alegra que hayas decidido dar este paso con nosotros.</p>
+            <p>Disfruta tu contenido, cuida tu proceso y celebra cada avance.</p>
+        </div>
+
+        <p class="welcome-text">¡Bienvenida/o a Keto Uplift! 🎉</p>
+    </div>
+
+    <script>
+        // Crear fuegos artificiales
+        function createFirework(x, y) {
+            const colors = ['#ff6b6b', '#4ecdc4', '#ffe66d', '#95e1d3', '#ff9ff3', '#54a0ff'];
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.left = x + 'px';
+            firework.style.top = y + 'px';
+            firework.style.background = colors[Math.floor(Math.random() * colors.length)];
+            firework.style.boxShadow = `0 0 10px ${firework.style.background}`;
+            document.body.appendChild(firework);
+
+            setTimeout(() => {
+                firework.remove();
+            }, 1000);
+        }
+
+        // Crear confetti
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                confetti.style.width = Math.random() * 8 + 5 + 'px';
+                confetti.style.height = confetti.style.width;
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 4000);
+            }
+        }
+
+        // Disparar fuegos artificiales al cargar
+        window.addEventListener('load', () => {
+            // Fuegos artificiales iniciales
+            setTimeout(() => createFirework(window.innerWidth * 0.2, window.innerHeight * 0.3), 300);
+            setTimeout(() => createFirework(window.innerWidth * 0.5, window.innerHeight * 0.2), 600);
+            setTimeout(() => createFirework(window.innerWidth * 0.8, window.innerHeight * 0.3), 900);
+            setTimeout(() => createFirework(window.innerWidth * 0.3, window.innerHeight * 0.4), 1200);
+            setTimeout(() => createFirework(window.innerWidth * 0.7, window.innerHeight * 0.4), 1500);
+
+            // Confetti inicial
+            createConfetti();
+
+            // Fuegos artificiales periódicos
+            setInterval(() => {
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * (window.innerHeight * 0.5);
+                createFirework(x, y);
+            }, 2000);
+        });
+
+        // Fuegos artificiales al hacer clic
+        document.addEventListener('click', (e) => {
+            createFirework(e.clientX, e.clientY);
+        });
+    </script>
+</body>
+</html>
+
