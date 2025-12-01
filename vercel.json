@@ -17,6 +17,14 @@
       "destination": "/guia-keto-uplift-master-pro-oferta.html"
     },
     {
+      "source": "/recetas-postres-keto-uplift",
+      "destination": "/recetas-postres-keto-uplift.html"
+    },
+    {
+      "source": "/guia-para-emprender-con-postres-keto-uplift",
+      "destination": "/guia-para-emprender-con-postres-keto-uplift.html"
+    },
+    {
       "source": "/gracias",
       "destination": "/gracias.html"
     }
@@ -40,6 +48,16 @@
     {
       "source": "/guia-keto-uplift-master-pro-oferta.html",
       "destination": "/guia-keto-uplift-master-pro-oferta",
+      "permanent": true
+    },
+    {
+      "source": "/recetas-postres-keto-uplift.html",
+      "destination": "/recetas-postres-keto-uplift",
+      "permanent": true
+    },
+    {
+      "source": "/guia-para-emprender-con-postres-keto-uplift.html",
+      "destination": "/guia-para-emprender-con-postres-keto-uplift",
       "permanent": true
     },
     {

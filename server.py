@@ -52,6 +52,8 @@ if __name__ == "__main__":
         print("  - http://localhost:8000/recetas-keto-uplift")
         print("  - http://localhost:8000/guia-keto-uplift-master-pro")
         print("  - http://localhost:8000/guia-keto-uplift-master-pro-oferta")
+        print("  - http://localhost:8000/recetas-postres-keto-uplift")
+        print("  - http://localhost:8000/guia-para-emprender-con-postres-keto-uplift")
         print("  - http://localhost:8000/gracias")
         try:
             httpd.serve_forever()

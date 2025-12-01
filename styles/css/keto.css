@@ -1553,3 +1553,80 @@
         padding: 0.8rem;
     }
 }
+
+/* Estilos para Postres Keto Uplift */
+/* Animaciones para emojis de postres */
+.floating-dessert {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-dessert:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.floating-dessert:nth-child(2) { top: 20%; right: 10%; animation-delay: 1s; }
+.floating-dessert:nth-child(3) { top: 40%; left: 8%; animation-delay: 2s; }
+.floating-dessert:nth-child(4) { top: 60%; right: 5%; animation-delay: 1.5s; }
+.floating-dessert:nth-child(5) { top: 80%; left: 12%; animation-delay: 0.5s; }
+.floating-dessert:nth-child(6) { top: 30%; right: 15%; animation-delay: 2.5s; }
+.floating-dessert:nth-child(7) { top: 70%; left: 3%; animation-delay: 3s; }
+.floating-dessert:nth-child(8) { top: 50%; right: 8%; animation-delay: 1s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(5deg); }
+    50% { transform: translateY(-10px) rotate(-5deg); }
+    75% { transform: translateY(-15px) rotate(3deg); }
+}
+
+.section-relative {
+    position: relative;
+    overflow: hidden;
+}
+
+.impact-box {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.impact-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.impact-box ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.impact-box li {
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+}
+
+/* Estilos específicos para Postres Keto Uplift - Mayor especificidad */
+section .container .pricing-section {
+    text-align: center;
+}
+
+section .container .pricing-section + .main-cta-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aggressive-text {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
