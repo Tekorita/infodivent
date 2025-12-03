@@ -149,6 +149,22 @@
     }
 }
 
+.bono-cover-image {
+    width: 150px;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: floatImage 2s ease-in-out infinite;
+}
+
+.bono-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .ebook-title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -619,18 +635,29 @@
 
 .testimonios-grid-new {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .testimonio-card-new {
     background-color: var(--white);
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonio-image-full {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
 }
 
 .testimonio-icon {
@@ -644,7 +671,7 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 1rem;
-    border: 3px solid var(--green-primary);
+    border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -862,6 +889,12 @@
 .bono-item.special {
     background-color: var(--light-yellow);
     border: 2px solid var(--orange);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bono-item.special:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .bono-icon {
@@ -1404,6 +1437,13 @@
         grid-template-columns: 1fr;
     }
 
+    .testimonios-grid-new {
+        grid-template-columns: 1fr;
+    }
+    .testimonio-image-full {
+        max-width: 100%;
+    }
+
     .keto-title-line1 {
         font-size: 3.5rem;
     }
@@ -1484,15 +1524,19 @@
 
 /* Estilos para página de oferta */
 .offer-alert {
-    background-color: #ff0000;
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
     color: #ffffff;
-    padding: 1rem;
+    padding: 1.2rem;
     text-align: center;
     font-weight: bold;
     font-size: 1.1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
+    margin: 0;
+    border-radius: 0;
     animation: pulseRed 2s ease-in-out infinite;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .offer-alert-text {
@@ -1502,6 +1546,13 @@
     text-align: center;
     margin: 1rem 0;
     text-transform: uppercase;
+}
+
+.offer-alert .offer-alert-text {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
 }
 
 .countdown-container {
@@ -1552,6 +1603,34 @@
         font-size: 0.9rem;
         padding: 0.8rem;
     }
+    .offer-alert .offer-alert-text {
+        font-size: 0.9rem;
+    }
+    .bono-item.special {
+        padding: 1.2rem;
+    }
+    .bono-item.special .bono-special-title {
+        font-size: 1.1rem;
+    }
+    .bono-item.special .bono-special-subtitle {
+        font-size: 0.95rem;
+    }
+    .hero-description-box ul {
+        margin-left: 0.5rem;
+        font-size: 0.9rem;
+    }
+    .bono-item.special {
+        flex-direction: column;
+        text-align: center;
+    }
+    .bono-cover-image {
+        width: 120px;
+        max-width: 120px;
+        margin-bottom: 1rem;
+    }
+    .bono-image-container {
+        width: 100%;
+    }
 }
 
 /* Estilos para Postres Keto Uplift */
@@ -1562,7 +1641,7 @@
     opacity: 0.3;
     pointer-events: none;
     z-index: 1;
-    animation: float 6s ease-in-out infinite;
+    animation: float 3.5s ease-in-out infinite;
 }
 
 .floating-dessert:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
