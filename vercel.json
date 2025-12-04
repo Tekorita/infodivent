@@ -9,6 +9,10 @@
       "destination": "/recetas-keto-uplift.html"
     },
     {
+      "source": "/recetas-keto-uplift-oferta",
+      "destination": "/recetas-keto-uplift-oferta.html"
+    },
+    {
       "source": "/guia-keto-uplift-master-pro",
       "destination": "/guia-keto-uplift-master-pro.html"
     },
@@ -38,6 +42,11 @@
     {
       "source": "/recetas-keto-uplift.html",
       "destination": "/recetas-keto-uplift",
+      "permanent": true
+    },
+    {
+      "source": "/recetas-keto-uplift-oferta.html",
+      "destination": "/recetas-keto-uplift-oferta",
       "permanent": true
     },
     {

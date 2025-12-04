@@ -1847,6 +1847,14 @@ a.btn.btn-red-alarm:active {
 }
 
 @media (max-width: 768px) {
+    .identificacion-containers {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+    .identificacion-containers > div {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+    }
     .countdown-timer {
         font-size: 2rem;
     }

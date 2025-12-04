@@ -50,6 +50,7 @@ if __name__ == "__main__":
         print("\nURLs disponibles:")
         print("  - http://localhost:8000/")
         print("  - http://localhost:8000/recetas-keto-uplift")
+        print("  - http://localhost:8000/recetas-keto-uplift-oferta")
         print("  - http://localhost:8000/guia-keto-uplift-master-pro")
         print("  - http://localhost:8000/guia-keto-uplift-master-pro-oferta")
         print("  - http://localhost:8000/recetas-postres-keto-uplift")
