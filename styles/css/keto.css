@@ -149,11 +149,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
 }
 
 .ebook-cover-hero-image {
     width: 100%;
-    max-width: 300px;
+    max-width: 650px !important;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
