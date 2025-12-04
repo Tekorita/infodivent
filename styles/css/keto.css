@@ -632,8 +632,9 @@ a.btn.btn-red-alarm:active {
     background: linear-gradient(135deg, #FFF5F5 0%, #FFEBEE 100%);
     margin: 2rem auto;
     max-width: 900px;
-    animation: borderGlow 2s ease-in-out infinite;
+    animation: borderGlow 3s ease-in-out infinite;
     box-shadow: 0 4px 20px rgba(229, 57, 53, 0.2);
+    overflow: visible;
 }
 
 .oferta-container-animated::before {
@@ -646,7 +647,9 @@ a.btn.btn-red-alarm:active {
     border: 3px dashed #E53935;
     border-radius: 12px;
     opacity: 0;
-    animation: borderPulse 2s ease-in-out infinite;
+    animation: borderPulse 3s ease-in-out infinite;
+    z-index: -1;
+    pointer-events: none;
 }
 
 @keyframes borderGlow {
@@ -655,7 +658,7 @@ a.btn.btn-red-alarm:active {
         border-color: #E53935;
     }
     50% {
-        box-shadow: 0 6px 30px rgba(229, 57, 53, 0.5), 0 0 20px rgba(229, 57, 53, 0.3);
+        box-shadow: 0 6px 30px rgba(229, 57, 53, 0.4), 0 0 15px rgba(229, 57, 53, 0.2);
         border-color: #FF5252;
     }
 }
@@ -666,8 +669,8 @@ a.btn.btn-red-alarm:active {
         transform: scale(1);
     }
     50% {
-        opacity: 0.6;
-        transform: scale(1.02);
+        opacity: 0.4;
+        transform: scale(1.01);
     }
 }
 
@@ -1971,4 +1974,43 @@ section .container .pricing-section + .main-cta-section {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     line-height: 1.4;
+}
+
+/* Animación de agitación de felicidad */
+@keyframes shakeHappiness {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    10% {
+        transform: translate(-2px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(2px, 2px) rotate(1deg);
+    }
+    30% {
+        transform: translate(-2px, 2px) rotate(-1deg);
+    }
+    40% {
+        transform: translate(2px, -2px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, -1px) rotate(-0.5deg);
+    }
+    60% {
+        transform: translate(1px, 1px) rotate(0.5deg);
+    }
+    70% {
+        transform: translate(-1px, 1px) rotate(-0.5deg);
+    }
+    80% {
+        transform: translate(1px, -1px) rotate(0.5deg);
+    }
+    90% {
+        transform: translate(-1px, 0) rotate(-0.5deg);
+    }
+}
+
+.celebration-container {
+    animation: shakeHappiness 8s ease-in-out;
+    animation-fill-mode: forwards;
 }
