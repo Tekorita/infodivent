@@ -132,7 +132,8 @@
             </div>
 
             <div class="main-cta-section">
-                <a href="https://pay.hotmart.com/V103173417R?off=hpwn162l&checkoutMode=10&bid=1764306743386" target="_blank" class="btn btn-green btn-large">QUIERO LA GUÍA KETO MASTER PRO</a>
+                <!-- HOTMART - Sales Funnel Widget -->
+                <div id="hotmart-sales-funnel"></div>
                 <div class="security-badge">
                     <div class="shield-icon">🛡️</div>
                     <div class="security-text">
@@ -400,22 +401,10 @@
                 <h2 class="cta-final-title">⚡ GARANTÍA TOTAL DE 7 DÍAS</h2>
                 <p class="cta-final-text">Si en una semana no notas mejoría en tu energía, claridad o consistencia, te devolvemos tu inversión.</p>
                 <p class="cta-final-subtext">COMPRA 100% SEGURA · ENTREGA INMEDIATA · ACCESO DE POR VIDA</p>
-                <a href="https://pay.hotmart.com/V103173417R?off=hpwn162l&checkoutMode=10&bid=1764306743386" target="_blank" class="btn btn-green btn-large">¡QUIERO EMPEZAR MI TRANSFORMACIÓN!</a>
                 <p class="cta-price-note price-current-oferta">Precio final: $7 USD</p>
             </div>
         </div>
     </section>
-
-    <!-- HOTMART - Sales Funnel Widget -->
-    <!--- sales funnel container --->
-    <div id="hotmart-sales-funnel"></div>
-
-    <!--- script load and setup --->
-    <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
-    <script>
-        checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
-    </script>
-    <!-- HOTMART - Sales Funnel Widget -->
 
     <!-- Footer -->
     <footer class="keto-footer">
@@ -423,6 +412,13 @@
             <p class="footer-copyright">© Guía Keto Master Pro 2025 — Infodivent. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- HOTMART - Sales Funnel Widget -->
+    <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+    <script>
+        checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+    </script>
+    <!-- HOTMART - Sales Funnel Widget -->
 
     <script src="js/main.js"></script>
     <script>

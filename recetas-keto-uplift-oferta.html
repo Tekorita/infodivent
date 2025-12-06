@@ -359,7 +359,8 @@
                 </div>
 
                 <div class="main-cta-section">
-                    <a href="https://pay.hotmart.com/Q103165513V?checkoutMode=10&bid=1764287934266" target="_blank" rel="noopener noreferrer" class="btn btn-red-alarm btn-large aggressive-text">Deseo obtener el ebook de recetas keto ahora</a>
+                    <!-- HOTMART - Sales Funnel Widget -->
+                    <div id="hotmart-sales-funnel"></div>
                     <div class="security-badge" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1.5rem;">
                         <img src="images/compra-segura.png" alt="Compra Segura" style="max-width: 250px; width: 100%; height: auto;">
                         <img src="images/medios-de-pago.png" alt="Medios de Pago" style="max-width: 300px; width: 100%; height: auto;">
@@ -489,7 +490,6 @@
                 <p class="cta-final-text aggressive-text" style="font-size: 1.3rem; margin-top: 1.5rem;">Tu cuerpo merece cuidado.</p>
                 <p class="cta-final-text" style="font-size: 1.2rem;">Y tú mereces sentirte bien otra vez.</p>
                 <p class="cta-final-text aggressive-text" style="font-size: 1.3rem; margin-top: 1.5rem; color: var(--orange-dark);">Da clic y comienza la transformación que llevas tiempo esperando.</p>
-                <a href="https://pay.hotmart.com/Q103165513V?checkoutMode=10&bid=1764287934266" target="_blank" rel="noopener noreferrer" class="btn btn-red-alarm btn-large aggressive-text" style="margin-top: 2rem;">QUIERO EMPEZAR HOY MISMO</a>
                 <p class="cta-price-note" style="margin-top: 1.5rem; font-size: 1rem;">Pago seguro · Entrega inmediata · Acceso de por vida · Oferta por tiempo limitado</p>
             </div>
         </div>
@@ -569,6 +569,12 @@
             startCountdown();
         }
     </script>
+    <!-- HOTMART - Sales Funnel Widget -->
+    <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+    <script>
+        checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+    </script>
+    <!-- HOTMART - Sales Funnel Widget -->
     <script src="js/main.js"></script>
 </body>
 </html>
