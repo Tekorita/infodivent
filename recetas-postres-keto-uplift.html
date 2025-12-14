@@ -499,7 +499,137 @@
         </div>
     </footer>
 
+    <!-- Notificación flotante de compras -->
+    <div id="purchase-notification" class="purchase-notification">
+        <div class="notification-content">
+            <span class="notification-icon">🛒</span>
+            <span class="notification-text"><span id="notification-name"></span> acaba de comprar el kit</span>
+        </div>
+    </div>
+
     <script src="js/main.js"></script>
+    <script>
+        // Lista de nombres aleatorios
+        const nombres = [
+            'María', 'Ana', 'Carmen', 'Laura', 'Patricia', 'Sofía', 'Isabel', 'Elena',
+            'Lucía', 'Andrea', 'Paula', 'Marta', 'Cristina', 'Beatriz', 'Natalia',
+            'Rosa', 'Pilar', 'Dolores', 'Josefa', 'Antonia', 'Francisca', 'Manuela',
+            'Teresa', 'Mercedes', 'Angela', 'Juana', 'Dolores', 'Esperanza', 'Rosario',
+            'Gloria', 'Monica', 'Raquel', 'Silvia', 'Victoria', 'Yolanda', 'Alicia',
+            'Amparo', 'Concepción', 'Dolores', 'Encarnación', 'Esther', 'Inmaculada',
+            'Josefa', 'Lourdes', 'Margarita', 'Milagros', 'Remedios', 'Soledad'
+        ];
+
+        // Función para obtener un nombre aleatorio
+        function getRandomName() {
+            return nombres[Math.floor(Math.random() * nombres.length)];
+        }
+
+        // Función para mostrar la notificación
+        function showNotification() {
+            const notification = document.getElementById('purchase-notification');
+            const nameElement = document.getElementById('notification-name');
+            
+            // Asignar un nombre aleatorio
+            nameElement.textContent = getRandomName();
+            
+            // Mostrar la notificación con animación
+            notification.classList.add('show');
+            
+            // Ocultar después de 4 segundos
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 4000);
+        }
+
+        // Patrón de intervalos: 20, 30, 40, 80, 6, 20, 30, 40, 80, 6...
+        const intervalos = [20000, 30000, 40000, 80000, 6000];
+        let indiceIntervalo = 0;
+        let tiempoAcumulado = 0;
+
+        function programarSiguienteNotificacion() {
+            const intervalo = intervalos[indiceIntervalo];
+            tiempoAcumulado += intervalo;
+            
+            setTimeout(() => {
+                showNotification();
+                // Avanzar al siguiente intervalo en el ciclo
+                indiceIntervalo = (indiceIntervalo + 1) % intervalos.length;
+                // Programar la siguiente notificación
+                programarSiguienteNotificacion();
+            }, intervalo);
+        }
+
+        // Iniciar el ciclo: primera notificación a los 20 segundos
+        programarSiguienteNotificacion();
+    </script>
+    <style>
+        .purchase-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            transform: translateY(100px);
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            max-width: 90%;
+            text-align: left;
+        }
+
+        .purchase-notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notification-icon {
+            font-size: 18px;
+            animation: pulse 2s infinite;
+        }
+
+        .notification-text {
+            display: flex;
+            align-items: center;
+        }
+
+        #notification-name {
+            font-weight: 700;
+            color: #FFD700;
+            margin-right: 5px;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .purchase-notification {
+                font-size: 12px;
+                padding: 12px 20px;
+                bottom: 15px;
+                left: 15px;
+            }
+        }
+    </style>
 </body>
 </html>
 
